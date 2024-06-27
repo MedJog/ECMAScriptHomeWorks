@@ -36,6 +36,26 @@ console.log(count.getCounter());
 count.decrement();
 count.decrement();
 console.log(count.getCounter());
+// вариант записи
+// function createCounter() {
+//   let counter = 0;
+//   return {
+//     increment() {
+//       counter++;
+//     }, 
+//     decrement() {
+//       counter--;
+//     }, 
+//     getCounter() {
+//       return counter;
+//     },
+//   };
+// }
+// const count = createCounter();
+// console.log(count);
+// count.decrement();
+// console.log(count.getCounter());
+
 
 /*Задание 3
 Напишите рекурсивную функцию findElementByClass, которая принимает корневой
@@ -50,12 +70,12 @@ function findElementByClass(element, className) {
     return element;
   } 
   for (child of element.children) {
-    if (child.hasChildNodes) {
-      let foundElement = findElementByClass(child, className);
+    // if (child.hasChildNodes) {
+      const foundElement = findElementByClass(child, className);
       if (foundElement) return foundElement;
-    } else continue;
+    // } else continue;
   }
-  return null;
+   return null;
 }
 
 const rootElement = document.getElementById('root');
